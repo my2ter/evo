@@ -12,5 +12,8 @@ class Container extends \Pimple
             return new Service\Calculate;
         };
 
+        $this['service.logger'] = function ($c) {
+            return new Service\Logger;
+        };
     }
 }

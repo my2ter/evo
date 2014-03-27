@@ -20,6 +20,12 @@ $app->get('/replace/{string}/{search}/{replace}', function ($string, $search, $r
     return $app['replace.controller']->getAction($app['request'], $string, $search, $replace);
 });
 
+$app->post('/log', function () use ($app) {
+    $tmpPath = __DIR__ . '/../tmp/';
+
+    return $app['logger.controller']->postAction($app['request'], $app['request']->request->all(), $tmpPath);
+});
+
 $app->get('/calculate/{number}', function ($number) use ($app) {
     return $app['calculate.controller']->getAction($app['request'], $number);
 });
