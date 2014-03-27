@@ -1,0 +1,14 @@
+{
+    "require": {
+        "silex/silex": "~1.1",
+        "symfony/validator": "*"
+    },
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "autoload": {
+        "psr-0": {
+            "Evo": "library"
+        }
+    }
+}
