@@ -16,6 +16,10 @@ $app->register(
     new Provider\ApiServiceProvider()
 );
 
+$app->get('/replace/{string}/{search}/{replace}', function ($string, $search, $replace) use ($app) {
+    return $app['replace.controller']->getAction($app['request'], $string, $search, $replace);
+});
+
 $app->get('/calculate/{number}', function ($number) use ($app) {
     return $app['calculate.controller']->getAction($app['request'], $number);
 });
